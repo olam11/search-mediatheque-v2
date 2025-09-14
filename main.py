@@ -9,7 +9,6 @@ def recherche_google_books(query, max_results=10):
     params = {
         "q": query,
         "maxResults": max_results,
-        "key": st.secrets["api"]["google_books_key"]
         }
 
     response = requests.get(url, params=params)

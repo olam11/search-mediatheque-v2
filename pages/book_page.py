@@ -122,7 +122,7 @@ def giga_fonction(titre, auteur):
     return results
 @st.cache_data(show_spinner=False)
 def get_livre_depuis_lien(lien):
-    response = requests.get(lien+f"?key={st.secrets["api"]["google_books_key"]}")
+    response = requests.get(lien)
     if response.status_code != 200:
         raise Exception(f"Erreur API Google Books : {response.status_code}")
 
