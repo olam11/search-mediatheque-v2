@@ -14,6 +14,8 @@ def recherche_google_books(query, max_results=10):
 
     response = requests.get(url, params=params)
     if response.status_code != 200:
+        st.error(f"Erreur API Google Books : {response.status_code}")
+        st.error(response.text) 
         raise Exception(f"Erreur API Google Books : {response.status_code}")
 
     data = response.json()
