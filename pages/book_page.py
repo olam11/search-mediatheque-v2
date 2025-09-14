@@ -69,10 +69,6 @@ def giga_fonction(titre, auteur):
             headers = {"User-Agent": "Mozilla/5.0 Gecko/20100101 Firefox/142.0"}
             response = requests.get(result_url, headers=headers, timeout=10)
 
-            # Sauvegarde du contenu HTML dans roubaix.html
-            with open("roubaix.html", "w", encoding="utf-8") as f:
-                f.write(response.text)
-
             if response.status_code != 200 or "Aucune" in response.text:
                 return {"search_page": search_url, "result": None}
 
