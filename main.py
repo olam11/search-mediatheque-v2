@@ -8,8 +8,9 @@ def recherche_google_books(query, max_results=10):
     url = "https://www.googleapis.com/books/v1/volumes"
     params = {
         "q": query,
-        "maxResults": max_results
-    }
+        "maxResults": max_results,
+        "key": st.secrets["api"]["google_books_key"]
+        }
 
     response = requests.get(url, params=params)
     if response.status_code != 200:

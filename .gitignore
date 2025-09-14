@@ -6,5 +6,6 @@ dist/
 wheels/
 *.egg-info
 test/
+.streamlit/secrets.toml
 # Virtual environments
 .venv
